@@ -1,104 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zerathis Network — At the core of creation</title>
-  <meta name="description" content="Zerathis Network — At the core of creation — where universes begin, your journey unfolds."/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ffde59'/></svg>">
-  <style>
-    :root{
-      --bg-1:#020214;
-      --bg-2:#07112a;
-      --accent:#9ad7ff;
-      --accent-2:#8b5cff;
-      --muted:#bfcbdc;
-      --card:#0e1530;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.03);
-      --radius:14px;
-      --maxw:1200px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      color:#eaf2ff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:36px 24px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:5}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:grid;place-items:center;font-weight:700;color:#081026;box-shadow:0 8px 30px rgba(0,0,0,0.6);
-    }
-    .brand h1{font-size:18px;margin:0;letter-spacing:0.6px}
-    nav{display:flex;gap:12px;align-items:center}
-    .btn{background:var(--accent);color:#041022;padding:10px 14px;border-radius:10px;font-weight:600;border:0;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .hero{
-      display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:48px 0;
-      position:relative;z-index:4;
-    }
-    .hero-left h2{margin:0;font-size:44px;line-height:1.03}
-    .tagline{margin-top:12px;color:var(--muted);max-width:68%}
-    .pills{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
-    .pill{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.02)}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
-    }
-    .status{display:flex;align-items:center;gap:12px}
-    .dot{width:14px;height:14px;border-radius:50%}
-    .dot.online{background:linear-gradient(180deg,#56ffb3,#00b27a);box-shadow:0 6px 18px rgba(0,178,122,0.12)}
-    .dot.off{background:rgba(255,255,255,0.06)}
-    .players{font-size:28px;font-weight:700}
-    .ip{font-family:monospace;background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;margin-top:12px;display:flex;justify-content:space-between;align-items:center}
-    .shards{
-      margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-    }
-    .shard{padding:14px;border-radius:12px;background:linear-gradient(180deg,var(--glass),var(--glass-2));border:1px solid rgba(255,255,255,0.02)}
-    .shard h4{margin:0 0 6px 0}
-    .muted-small{color:var(--muted);font-size:13px}
-    section.features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px;align-items:center}
-    .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .feature{padding:16px;border-radius:12px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
-    footer{padding:36px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .shards{grid-template-columns:repeat(2,1fr)}
-      .tagline{max-width:100%}
-    }
-    @media (max-width:600px){
-      .shards{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      nav{width:100%;justify-content:space-between}
-      .brand h1{font-size:16px}
-      .hero-left h2{font-size:30px}
-      .card{width:100%}
-      .features{grid-template-columns:1fr}
-    }
-    .btn:hover{transform:translateY(-3px);transition:all .18s ease}
-    .shard:hover{transform:translateY(-6px);transition:all .18s ease;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
-    .glow{
-      position:absolute;left:50%;top:10%;width:600px;height:600px;transform:translateX(-50%);filter:blur(80px);opacity:0.12;
-      background:radial-gradient(circle at center, rgba(138,92,255,0.7), transparent 30%);
-      z-index:2;border-radius:50%;
-    }
-    .small{font-size:13px;color:var(--muted)}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="stars" style="position:fixed;inset:0;z-index:0;"></canvas>
-  <div class="glow"></div>
-
   <div class="wrap">
     <header>
       <div class="brand">
@@ -108,223 +16,32 @@
           <div class="small">At the core of creation</div>
         </div>
       </div>
-
       <nav>
-        <a class="small muted-small">Play • Shards • Community</a>
-        <button id="discordBtn" class="btn ghost">Discord</button>
         <button id="joinBtn" class="btn">Join Server</button>
+        <button id="copyIp" class="btn ghost">Copy</button>
       </nav>
     </header>
 
-    <main class="hero" role="main">
-      <div class="hero-left">
-        <h2>At the core of creation — where universes begin, your journey unfolds.</h2>
-        <p class="tagline">Welcome to Zerathis Network: a shard-based Minecraft universe where each world is a fragment of the origin. Explore survival shards, tech forges, and neon PvP arenas — all connected at the Core.</p>
-
-        <div class="pills">
-          <div class="pill">SMP • Survival</div>
-          <div class="pill">Shards • Expandable Worlds</div>
-          <div class="pill">Minigames • Events</div>
-          <div class="pill">Ranks • Economy</div>
-        </div>
-
-        <div style="margin-top:20px;display:flex;gap:12px;">
-          <button id="joinBtn2" class="btn">Join: ZerathisNetwork.enderman.cloud</button>
-          <button id="learn" class="btn ghost">Learn More</button>
-        </div>
-      </div>
-
+    <main class="hero">
       <aside>
         <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div class="small">Network Status</div>
-              <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
-                <div id="statusDot" class="dot off"></div>
-                <div>
-                  <div id="statusText" style="font-weight:700">Checking...</div>
-                  <div class="small muted-small">Uptime: <span id="uptime">--</span></div>
-                </div>
-              </div>
+          <div>
+            <div class="small">Network Status</div>
+            <div class="status">
+              <div id="statusDot" class="dot off"></div>
+              <div id="statusText">Checking...</div>
             </div>
-            <div style="text-align:right">
-              <div class="small">Players</div>
-              <div class="players" id="players">--</div>
-              <div class="small muted-small" id="maxPlayers">/ -- max</div>
+            <div class="players-container">
+              <div>Players: <span id="players">--</span> / <span id="maxPlayers">--</span></div>
             </div>
+            <div>Version: <span id="serverVersion">--</span></div>
+            <div class="small">IP: <span id="serverIp">ZerathisNetwork.enderman.cloud</span></div>
           </div>
-
-          <div class="ip" style="margin-top:12px">
-            <div style="font-size:13px"><strong>Address</strong><br><span id="serverIp">ZerathisNetwork.enderman.cloud</span></div>
-            <div style="text-align:right">
-              <button id="copyIp" class="btn ghost">Copy</button><br>
-              <span class="small muted-small" id="serverVersion">Version: --</span>
-            </div>
-          </div>
-
-          <div class="shards" style="margin-top:14px">
-            <div class="shard">
-              <h4>Shard: Zerathis Core</h4>
-              <div class="muted-small">The hub — spawn, shops, and the portal to other shards.</div>
-            </div>
-            <div class="shard">
-              <h4>Shard: Kryovara</h4>
-              <div class="muted-small">Frozen survival shard with rare ores & boss drives.</div>
-            </div>
-            <div class="shard">
-              <h4>Shard: Oblivara</h4>
-              <div class="muted-small">Void-theme PvP & loot arenas with dynamic rotation.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="small" style="margin-top:10px;color:var(--muted)">
-          Tip: Click <strong>Join</strong> to copy the server IP to clipboard.
         </div>
       </aside>
     </main>
-
-    <section class="features">
-      <div>
-        <h3 style="margin-top:0">Network Features</h3>
-        <div class="feature-grid" style="margin-top:12px">
-          <div class="feature"><strong>Shard system</strong><div class="muted-small">Each gamemode is a shard that links through the Zerathis Core.</div></div>
-          <div class="feature"><strong>Cross-shard economy</strong><div class="muted-small">Trade and teleport across shards while keeping progress.</div></div>
-          <div class="feature"><strong>Events & Seasons</strong><div class="muted-small">Timed events that change shard rules and loot.</div></div>
-          <div class="feature"><strong>Ranked Arenas</strong><div class="muted-small">Competitive ladder for teams & individuals.</div></div>
-        </div>
-      </div>
-
-      <div>
-        <h3 style="margin-top:0">Community</h3>
-        <p class="muted-small">Active Discord, leaderboard, and content creator programs. Host tournaments and apply for staff via the Discord. Zerathis is designed to grow — add your shard ideas to the roadmap.</p>
-
-        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-          <div class="pill">Discord</div>
-          <div class="pill">Wiki</div>
-          <div class="pill">Forum</div>
-          <div class="pill">Applications</div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <strong>Zerathis Network</strong> — At the core of creation</div>
-      <div class="small muted-small">Built for branding. Replace content and scripts to link to your live systems.</div>
-    </footer>
   </div>
 
-  <script>
-    (function starfield(){
-      const canvas = document.getElementById('stars');
-      if(!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let w = canvas.width = innerWidth;
-      let h = canvas.height = innerHeight;
-      const stars = [];
-      const STAR_COUNT = Math.floor((w*h)/12000);
-
-      for(let i=0;i<STAR_COUNT;i++){
-        stars.push({ x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.2+0.2, vx: (Math.random()-0.5)*0.02 });
-      }
-
-      function resize(){ w = canvas.width = innerWidth; h = canvas.height = innerHeight; }
-      addEventListener('resize', resize);
-
-      function draw(){
-        ctx.clearRect(0,0,w,h);
-        const g = ctx.createLinearGradient(0,0,0,h);
-        g.addColorStop(0, "rgba(8,10,22,0.6)");
-        g.addColorStop(1, "rgba(5,10,20,0.75)");
-        ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
-
-        for(let s of stars){
-          s.x += s.vx;
-          s.y += Math.sin((Date.now()+s.x*10)/6000)*0.05;
-          if(s.x<0) s.x = w; if(s.x>w) s.x = 0;
-          const a = 0.6 + Math.sin((Date.now()/700) + s.x*0.001)*0.4;
-          ctx.beginPath();
-          ctx.fillStyle = 'rgba(255,255,255,'+a+')';
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-          ctx.fill();
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    (async function serverUI(){
-      const displayHost = "ZerathisNetwork.enderman.cloud";
-      const playersEl = document.getElementById('players');
-      const maxPlayersEl = document.getElementById('maxPlayers');
-      const statusDot = document.getElementById('statusDot');
-      const statusText = document.getElementById('statusText');
-      const uptime = document.getElementById('uptime');
-      const serverIpEl = document.getElementById('serverIp');
-      const copyBtn = document.getElementById('copyIp');
-      const joinBtn = document.getElementById('joinBtn');
-      const joinBtn2 = document.getElementById('joinBtn2');
-      const discordBtn = document.getElementById('discordBtn');
-      const serverVersionEl = document.getElementById('serverVersion');
-
-      if (serverIpEl) serverIpEl.textContent = displayHost;
-
-      async function fetchStatus(host) {
-        try {
-          const resp = await fetch(`https://mcapi.us/server/status?ip=${host}`);
-          if (!resp.ok) return null;
-          return await resp.json();
-        } catch(e){ return null; }
-      }
-
-      function updateUI(data) {
-        if (!data || !data.online) {
-          statusDot.classList.remove('online'); statusDot.classList.add('off');
-          statusText.textContent = 'Offline';
-          playersEl.textContent = '--';
-          maxPlayersEl.textContent = '/ -- max';
-          uptime.textContent = '--';
-          serverVersionEl.textContent = 'Version: --';
-          return;
-        }
-        statusDot.classList.remove('off'); statusDot.classList.add('online');
-        statusText.textContent = 'Online';
-        playersEl.textContent = data.players.now;
-        maxPlayersEl.textContent = '/ ' + data.players.max + ' max';
-        uptime.textContent = data.motd ? data.motd : 'Live';
-        serverVersionEl.textContent = 'Version: ' + (data.server.name || '--');
-      }
-
-      async function refreshStatus() {
-        statusDot.classList.remove('online'); statusDot.classList.add('off');
-        statusText.textContent = 'Checking...';
-        playersEl.textContent = '--';
-        maxPlayersEl.textContent = '/ -- max';
-        uptime.textContent = '--';
-        serverVersionEl.textContent = 'Version: --';
-
-        const data = await fetchStatus(displayHost);
-        updateUI(data);
-      }
-
-      refreshStatus();
-      setInterval(refreshStatus, 15000);
-
-      async function copyIP(){
-        try {
-          await navigator.clipboard.writeText(displayHost);
-          copyBtn.textContent = 'Copied!';
-          setTimeout(()=>copyBtn.textContent='Copy',1500);
-        } catch(e) {
-          alert('Copy failed — please copy manually: ' + displayHost);
-        }
-      }
-
-      if (copyBtn) copyBtn.addEventListener('click', copyIP);
-      if (joinBtn) joinBtn.addEventListener('click', copyIP);
-      if (joinBtn2) joinBtn2.addEventListener('click', copyIP);
-      if (discordBtn) discordBtn.addEventListener('click', ()=>window.open('https://discord.gg/your-invite','_blank'));
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
